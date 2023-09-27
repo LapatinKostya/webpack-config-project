@@ -19,7 +19,7 @@ export function buildWebpackConfig (options: BuildOptions): webpack.Configuratio
 
     plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders()
+      rules: buildLoaders(options)
     },
     // не показывать расширения при импорте
     resolve: buildResolvers(),

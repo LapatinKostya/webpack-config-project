@@ -1,11 +1,11 @@
 import {useState} from "react";
-import './Counter.scss'
+import s from './Counter.module.scss'
 
 interface CounterProps {
   className?: string
 }
 
-export const Counter = ({className}: CounterProps) => {
+export const Counter = ({}: CounterProps) => {
   const [count, setCount] = useState(0)
 
   const incrementCount = () => {
@@ -19,7 +19,7 @@ export const Counter = ({className}: CounterProps) => {
     <>
       <h1>{count}</h1>
       <button onClick={incrementCount}>+</button>
-      <button onClick={decrementCount}>-</button>
+      <button className={s.button} onClick={decrementCount}>-</button>
     </>
   );
 };
