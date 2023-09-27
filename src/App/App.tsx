@@ -4,12 +4,13 @@ import {AboutPage, MainPage} from "../pages";
 import {Suspense} from "react";
 import {useTheme} from "./providers/ThemeProvider/ThemeProvider";
 import {ThemeSwitcher} from "../widgets/ThemeSwitcher/ui/ThemeSwitcher";
+import {classNames} from "./Shared/helpers/classNames/classNames";
 
 const App = () => {
   const {theme} = useTheme()
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app',{} , [theme])}>
       <Link to={'/'}>Главная</Link>
       <Link to={'/about'}>О сайте</Link>
       <Suspense fallback={'...loading'}>
@@ -22,4 +23,5 @@ const App = () => {
     </div>
   );
 }
+
 export default App
