@@ -1,5 +1,4 @@
-import {useTheme} from "../../../app/providers/ThemeProvider/ThemeProvider";
-import {Theme} from "../../../app/providers/ThemeProvider/ThemeProvider";
+import {Theme, useTheme} from "app/providers/ThemeProvider";
 
 export const ThemeSwitcher = () => {
   const {theme, toggleTheme} = useTheme();

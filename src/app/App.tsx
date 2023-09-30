@@ -1,10 +1,12 @@
-import './styles/index.scss'
+import React, {Suspense} from "react";
 import {Link, Route, Routes} from "react-router-dom";
-import {AboutPage, MainPage} from "../pages";
-import {Suspense} from "react";
-import {classNames} from "../shared/helpers/classNames/classNames";
-import {useTheme} from "./providers/ThemeProvider/ThemeProvider";
-import {ThemeSwitcher} from "../widgets/ThemeSwitcher";
+
+import {classNames} from "shared/lib/classNames/classNames";
+import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {useTheme} from "app/providers/ThemeProvider";
+import {MainPage} from "pages/MainPage";
+import {AboutPage} from "pages/AboutPage";
+import './styles/index.scss'
 
 const App = () => {
   const {theme} = useTheme()

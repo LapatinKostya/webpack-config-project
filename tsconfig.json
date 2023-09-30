@@ -11,6 +11,9 @@
     "allowSyntheticDefaultImports": true,
     // для абсолютного импорта
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
 
   },
   "ts-node": {
