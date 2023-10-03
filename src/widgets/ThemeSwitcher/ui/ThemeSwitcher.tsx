@@ -1,13 +1,13 @@
-import {Theme, useTheme} from "../../../App/providers/ThemeProvider/ThemeProvider";
+import {Theme, useTheme} from "app/providers/ThemeProvider";
 
 export const ThemeSwitcher = () => {
-    const { theme, toggleTheme } = useTheme();
+  const {theme, toggleTheme} = useTheme();
 
-    return (
-        <button
-            onClick={toggleTheme}
-        >
-            {theme === Theme.LIGHT ? 'light' : 'dark'}
-        </button>
-    );
+  return (
+    <button
+      onClick={toggleTheme}
+    >
+      {theme === Theme.LIGHT ? 'light' : 'dark'}
+    </button>
+  );
 };
