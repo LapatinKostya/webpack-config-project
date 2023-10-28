@@ -1,0 +1,69 @@
+.Button {
+    cursor: pointer;
+    line-height: 0;
+}
+
+.krinky {
+    background: #ff651c;
+    color: #fff;
+    box-shadow: 4px 4px 0 -2px #373737;
+    padding: 5px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: ease all 0.35s;
+    display: inline-block;
+}
+
+.krinky:hover {
+    background: #373737;
+    box-shadow: 4px 4px 0 -2px #ff651c;
+}
+
+.background {
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.backgroundInverted {
+    background: var(--invert-bg-color);
+    color: var(--inverted-primary-color);
+}
+
+.size_m {
+    font: var(--font-m);
+}
+
+.size_l {
+    font: var(--font-l);
+}
+
+.size_xl {
+    font: var(--font-xl);
+}
+
+.square.size_m {
+    width: var(--font-line-m);
+    height: var(--font-line-m);
+    font-size: var(--font-size-m);
+}
+
+.square.size_l {
+    width: var(--font-line-l);
+    height: var(--font-line-l);
+    font-size: var(--font-size-l);
+}
+
+.square.size_xl {
+    width: var(--font-line-xl);
+    height: var(--font-line-xl);
+    font-size: var(--font-size-xl);
+}
+
+.disabled, {
+    opacity: 0.5;
+    background-color: #646464;
+}
