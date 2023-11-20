@@ -15,7 +15,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'i18next'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -25,6 +25,7 @@ module.exports = {
     ],
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': 'warn',
+    'i18next/no-literal-string': 'warn',
   },
   // variables
   globals: {},
