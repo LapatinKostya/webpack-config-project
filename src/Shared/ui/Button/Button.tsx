@@ -1,18 +1,18 @@
-import { classNames, Mods } from "shared/lib/classNames/classNames"
-import { ButtonHTMLAttributes, FC } from "react"
-import s from "./Button.module.scss"
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { ButtonHTMLAttributes, FC } from 'react'
+import s from './Button.module.scss'
 
 export enum ButtonTheme {
-  CLEAR = "clear",
-  KRINKY = "krinky",
-  BACKGROUND = "background",
-  BACKGROUND_INVERTED = "backgroundInverted",
+  CLEAR = 'clear',
+  KRINKY = 'krinky',
+  BACKGROUND = 'background',
+  BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
-  M = "size_m",
-  L = "size_l",
-  XL = "size_xl",
+  M = 'size_m',
+  L = 'size_l',
+  XL = 'size_xl',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -41,7 +41,7 @@ export const Button: FC<ButtonProps> = (props) => {
 
   return (
     <button
-      type="button"
+      type='button'
       disabled={disabled}
       className={classNames(s.Button, mods, [className, s[theme], s[size]])}
       {...otherProps}
