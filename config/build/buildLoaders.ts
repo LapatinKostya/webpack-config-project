@@ -1,21 +1,20 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import webpack from "webpack"
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import { BuildOptions } from "./types/config"
 
-export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
-
+export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  };
-  const fileLoader =  {
-      test: /\.(png|jpe?g|gif)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-        },
-      ],
-    };
+    use: ["@svgr/webpack"],
+  }
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  }
 
   const cssLoader = {
     test: /\.s[ac]ss$/i,
@@ -25,10 +24,10 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         loader: "css-loader",
         options: {
           modules: {
-            auto: (path: string) => Boolean(path.includes('.module.')),
-            localIdentName: isDev ? '[path][name]__[local]': '[hash:base64:8]'
-          }
-        }
+            auto: (path: string) => Boolean(path.includes(".module.")),
+            localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
+          },
+        },
       },
       // "css-loader",
       "sass-loader",
@@ -38,14 +37,9 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
   // Без ts нужен babel для react
   const tsLoader = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
+    use: "ts-loader",
     exclude: /node_modules/,
   }
 
-  return [
-    fileLoader,
-    svgLoader,
-    tsLoader,
-    cssLoader
-  ]
+  return [fileLoader, svgLoader, tsLoader, cssLoader]
 }
