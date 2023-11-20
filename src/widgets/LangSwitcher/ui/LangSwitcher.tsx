@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import s from './LangSwitcher.module.scss'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
@@ -17,7 +16,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
   return (
     <Button
-      className={classNames(s.LangSwitcher, {}, [className])}
+      className={classNames('', {}, [className])}
       onClick={onTranslate}
       theme={ButtonTheme.KRINKY}
     >
