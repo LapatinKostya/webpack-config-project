@@ -2,5 +2,7 @@
   "test": "test",
   "translate": "translate",
   "lang": "en",
-  "page not found": "Page not found"
+  "page not found": "Page not found",
+  "something went wrong": "something went wrong",
+  "reload page": "reload page"
 }

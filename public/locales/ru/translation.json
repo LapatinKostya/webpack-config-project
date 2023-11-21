@@ -2,5 +2,7 @@
   "test": "тест",
   "translate": "перевод",
   "lang": "ru",
-  "page not found": "Страница не найдена"
+  "page not found": "Страница не найдена",
+  "something went wrong": "Произошла непредвиденная ошибка",
+  "reload page": "Перезагрузить"
 }

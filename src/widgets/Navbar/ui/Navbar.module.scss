@@ -1,8 +1,8 @@
 .Navbar {
+  display: flex;
   width: 100%;
   height: var(--navbar-height);
   background: var(--invert-bg-color);
   align-items: center;
   padding: 20px;
-  justify-content: space-between;
 }
