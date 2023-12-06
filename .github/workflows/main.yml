@@ -10,7 +10,7 @@ jobs:
   integration:
     strategy:
       matrix:
-        os: ubuntu-latest
+        os: [ ubuntu-latest ]
         node: [ 18.x ]
     runs-on: ${{ matrix.os }}
 
