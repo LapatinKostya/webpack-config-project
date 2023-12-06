@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Sidebar } from 'widgets/Sidebar'
 import { ThemeDecorator } from 'shared/config/decorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
+import { PageError } from 'widgets/PageError'
 
 const meta = {
-  title: 'widget/Sidebar',
-  component: Sidebar,
+  title: 'widget/PageError',
+  component: PageError,
   parameters: {
-    layout: 'centered',
+    margin: 0,
   },
   argTypes: {},
-} satisfies Meta<typeof Sidebar>
+} satisfies Meta<typeof PageError>
 
 export default meta
 type Story = StoryObj<typeof meta>
