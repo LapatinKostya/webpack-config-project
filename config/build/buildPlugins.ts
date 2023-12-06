@@ -23,6 +23,7 @@ export function buildPlugins({
     }),
   ]
   if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin())
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
   }
   return plugins
