@@ -1,6 +1,18 @@
 .Button {
   cursor: pointer;
   line-height: 0;
+  border: none;
+}
+
+.clear {
+  background: transparent none;
+}
+
+.outline {
+  padding: 10px;
+  background: transparent none;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .krinky {
