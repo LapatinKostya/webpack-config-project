@@ -15,7 +15,10 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
     "test:ui": "loki test",
-    "test:ui:ok": "loki update"
+    "test:ui:ok": "loki update",
+    "test:ui:report": "yarn test:ui:json && yarn test:ui:html",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "keywords": [],
   "author": "",
@@ -64,6 +67,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "^3.1.0",
     "react-i18next": "^13.4.1",
+    "reg-cli": "^0.17.7",
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
     "storybook": "7.5.3",
