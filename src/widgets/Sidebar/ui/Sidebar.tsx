@@ -3,15 +3,15 @@ import s from './Sidebar.module.scss'
 import { useState } from 'react'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
-import { useTranslation } from 'react-i18next'
-import { Button } from 'shared/ui/Button/Button'
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button'
+import ArrowRight from 'shared/assets/icons/arrow-right.svg'
+import ArrowLeft from 'shared/assets/icons/arrow-left.svg'
 
 interface SidebarProps {
   className?: string
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-  const [t] = useTranslation()
   const [collapsed, setCollapsed] = useState(false)
 
   const mods: Mods = {
@@ -26,10 +26,17 @@ export const Sidebar = ({ className }: SidebarProps) => {
       data-testid={'sidebar'}
       className={classNames(s.Sidebar, mods, [className])}
     >
-      <Button data-testid='sidebar-toggle' onClick={onToggle}>
-        {t('toggle')}
+      <Button
+        data-testid='sidebar-toggle'
+        onClick={onToggle}
+        className={s.collapseBtn}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        size={ButtonSize.XL}
+        square
+      >
+        {collapsed ? <ArrowRight className={'test'} /> : <ArrowLeft />}
       </Button>
-      <div className={s.switchers}>
+      <div className={`${s.switchers}`}>
         <ThemeSwitcher />
         <LangSwitcher className={s.lang} />
       </div>

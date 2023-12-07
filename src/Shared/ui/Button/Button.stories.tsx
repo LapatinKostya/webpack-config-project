@@ -24,6 +24,7 @@ export const Clear: Story = {
 export const Krinky: Story = {
   args: {
     children: 'Test',
+    size: ButtonSize.M,
     theme: ButtonTheme.KRINKY,
   },
 }
