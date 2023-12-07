@@ -6,8 +6,7 @@ import { LangSwitcher } from 'widgets/LangSwitcher'
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button'
 import ArrowRight from 'shared/assets/icons/arrow-right.svg'
 import ArrowLeft from 'shared/assets/icons/arrow-left.svg'
-import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { useTranslation } from 'react-i18next'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import MainPageIcon from 'shared/assets/icons/main-page-icon.svg'
 import AboutPageIcon from 'shared/assets/icons/about-page-icon.svg'
 import { IconWrap } from 'shared/ui/IconWrap/IconWrap'
@@ -18,7 +17,6 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-  const { t } = useTranslation()
   const [collapsed, setCollapsed] = useState(false)
 
   const mods: Mods = {
@@ -34,13 +32,21 @@ export const Sidebar = ({ className }: SidebarProps) => {
       className={classNames(s.Sidebar, mods, [className])}
     >
       <div className={s.navigateItems}>
-        <AppLink to={RouterPath.main} className={s.navigateItem}>
+        <AppLink
+          to={RouterPath.main}
+          theme={AppLinkTheme.KRINKY}
+          className={s.navigateItem}
+        >
           <IconWrap className={s.icon}>
             <MainPageIcon />
           </IconWrap>
           {!collapsed && 'Main page'}
         </AppLink>
-        <AppLink to={RouterPath.about} className={s.navigateItem}>
+        <AppLink
+          to={RouterPath.about}
+          theme={AppLinkTheme.KRINKY}
+          className={s.navigateItem}
+        >
           <IconWrap className={s.icon}>
             <AboutPageIcon />
           </IconWrap>
