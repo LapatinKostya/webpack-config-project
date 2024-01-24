@@ -9,6 +9,7 @@ import React, {
   useState,
 } from 'react'
 import { Portal } from 'shared/ui/Portal/Portal'
+import { useTheme } from 'app/providers/ThemeProvider'
 
 interface ModalProps {
   className?: string
@@ -20,6 +21,8 @@ interface ModalProps {
 const ANIMATION_DELAY = 300
 
 export const Modal = (props: ModalProps) => {
+  const { theme } = useTheme()
+
   const { className, children, isOpen, onClose } = props
 
   const [isClosing, setIsClosing] = useState(false)
@@ -67,7 +70,7 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div className={classNames(s.Modal, mods, [className])}>
+      <div className={classNames(s.Modal, mods, [className, theme])}>
         <div className={s.overlay} onClick={closeHandler}>
           <div className={s.content} onClick={onContentClick}>
             {children}
