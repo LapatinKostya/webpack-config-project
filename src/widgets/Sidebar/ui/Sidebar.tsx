@@ -11,12 +11,14 @@ import MainPageIcon from 'shared/assets/icons/main-page-icon.svg'
 import AboutPageIcon from 'shared/assets/icons/about-page-icon.svg'
 import { IconWrap } from 'shared/ui/IconWrap/IconWrap'
 import { RouterPath } from 'shared/config/routeConfig/routeConfig'
+import { useTranslation } from 'react-i18next'
 
 interface SidebarProps {
   className?: string
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
+  const { t } = useTranslation()
   const [collapsed, setCollapsed] = useState(false)
 
   const mods: Mods = {
@@ -40,7 +42,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
           <IconWrap className={s.icon}>
             <MainPageIcon />
           </IconWrap>
-          {!collapsed && 'Main page'}
+          {!collapsed && t('Main page')}
         </AppLink>
         <AppLink
           to={RouterPath.about}
@@ -50,7 +52,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
           <IconWrap className={s.icon}>
             <AboutPageIcon />
           </IconWrap>
-          {!collapsed && 'About page'}
+          {!collapsed && t('About page')}
         </AppLink>
       </div>
 
