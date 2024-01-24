@@ -8,6 +8,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
+import { Portal } from 'shared/ui/Portal/Portal'
 
 interface ModalProps {
   className?: string
@@ -65,12 +66,14 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen, onKeyDown])
 
   return (
-    <div className={classNames(s.Modal, mods, [className])}>
-      <div className={s.overlay} onClick={closeHandler}>
-        <div className={s.content} onClick={onContentClick}>
-          {children}
+    <Portal>
+      <div className={classNames(s.Modal, mods, [className])}>
+        <div className={s.overlay} onClick={closeHandler}>
+          <div className={s.content} onClick={onContentClick}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   )
 }
