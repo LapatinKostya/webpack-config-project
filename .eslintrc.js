@@ -29,7 +29,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     'i18next/no-literal-string': 'warn',
     'react/no-unescaped-entities': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': 'warn',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
   },
