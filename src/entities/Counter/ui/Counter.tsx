@@ -1,9 +1,9 @@
-import { counterActions } from '../model/slice/counterSlice'
 import {
   useAppDispatch,
   useAppSelector,
-} from 'app/providers/StorePrivider/config/store'
+} from 'app/providers/StoreProvider/config/store'
 import { getCounterValue } from '../model/Selectors/getCounterValue/getCounterValue'
+import { counterActions } from '../model/slice/counterSlice'
 
 export const Counter = () => {
   const dispatch = useAppDispatch()

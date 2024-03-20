@@ -1,3 +1,3 @@
-import { StateSchema } from 'app/providers/StorePrivider'
+import { StateSchema } from 'app/providers/StoreProvider'
 
 export const getCounter = (state: StateSchema) => state.counter
